@@ -1,0 +1,33 @@
+{
+  "name": "muneem-compress",
+  "version": "1.0.0",
+  "description": "Compressor for muneem framework",
+  "main": "src/compressor.js",
+  "scripts": {
+    "test": "jasmine tests/*test.js",
+    "coverage": "nyc jasmine tests/*test.js; nyc report --reporter=lcov"
+  },
+  "keywords": [
+    "compress",
+    "muneem"
+  ],
+  "author": "Amit Kumar Gupta",
+  "license": "MIT",
+  "devDependencies": {
+    "jasmine": "^3.1.0",
+    "mock-req": "^0.2.0",
+    "mock-res": "^0.5.0"
+  },
+  "dependencies": {
+    "into-stream": "^3.1.0",
+    "muneem": "^2.0.0",
+    "nyc": "^12.0.2",
+    "pump": "^3.0.0"
+  },
+  "nyc": {
+    "exclude": [
+      "tests",
+      "build"
+    ]
+  }
+}
