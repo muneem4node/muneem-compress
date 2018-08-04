@@ -9,7 +9,9 @@ describe ('Compressor', () => {
 
     it('should not compress if data is null', () => {
         const muneem = Muneem();
-        compressor(muneem, null, false);
+        compressor(muneem, {
+            keepItOn : false
+        });
 
         muneem.addHandler("main", (asked,answer) => {
             answer.write(null);
@@ -27,7 +29,9 @@ describe ('Compressor', () => {
  
     it('should not compress if data is undefined', () => {
         const muneem = Muneem();
-        compressor(muneem, null, false);
+        compressor(muneem, {
+            keepItOn : false
+        });
 
         muneem.addHandler("main", (asked,answer) => {
             expect(() => {
@@ -44,7 +48,9 @@ describe ('Compressor', () => {
 
     it('should not compress if data is not string or buffer', () => {
         const muneem = Muneem();
-        compressor(muneem, null, false);
+        compressor(muneem, {
+            keepItOn : false
+        });
 
         muneem.addHandler("main", (asked,answer) => {
             answer.write({hello: "world"});
@@ -62,7 +68,9 @@ describe ('Compressor', () => {
 
     it('should not compress for small payload', () => {
         const muneem = Muneem();
-        compressor(muneem, null, false);
+        compressor(muneem, {
+            keepItOn : false
+        });
 
         muneem.addHandler("main", (asked,answer) => {
             answer.write('{hello: "world"}');
@@ -80,8 +88,9 @@ describe ('Compressor', () => {
     it('should not throw error not compress when invalid data is set and errorOnInvalidData is false', () => {
         const muneem = Muneem();
         compressor(muneem, {
-            errorOnInvalidData : false
-        }, false);
+            errorOnInvalidData : false,
+            keepItOn : false
+        });
 
         muneem.addHandler("main", (asked,answer) => {
             answer.write( {hello: "world"} );
@@ -100,7 +109,9 @@ describe ('Compressor', () => {
 
     it('should not compress if threshhold is not crossed', (done) => {
         const muneem = Muneem();
-        compressor(muneem, null, false);
+        compressor(muneem, {
+            keepItOn : false
+        });
 
         muneem.addHandler("main", (asked,answer) => {
             answer.write('{hello: "world"}');
@@ -120,7 +131,9 @@ describe ('Compressor', () => {
     it('should not compress if default filter returns true due to header: x-no-compression', (done) => {
 
         const muneem = Muneem();
-        compressor(muneem, null, false);
+        compressor(muneem, {
+            keepItOn : false
+        });
 
         muneem.addHandler("main", (asked,answer) => {
             answer.write('{hello: "world"}');
@@ -142,7 +155,9 @@ describe ('Compressor', () => {
     it('should not compress if default filter returns true due to header: cache-control', (done) => {
 
         const muneem = Muneem();
-        compressor(muneem, null, false);
+        compressor(muneem, {
+            keepItOn : false
+        });
 
         muneem.addHandler("main", (asked,answer) => {
             answer.write('{hello: "world"}');
@@ -164,7 +179,9 @@ describe ('Compressor', () => {
     it('should not compress if custom filter returns true', (done) => {
 
         const muneem = Muneem();
-        compressor(muneem, null, false);
+        compressor(muneem, {
+            keepItOn : false
+        });
 
         muneem.addHandler("main", (asked,answer) => {
             answer.write('{hello: "world"}');
@@ -187,7 +204,9 @@ describe ('Compressor', () => {
 
     it('should not compress if compress flag is set to false', (done) => {
         const muneem = Muneem();
-        compressor(muneem, null, true);
+        compressor(muneem, {
+            keepItOn : true
+        });
 
         muneem.addHandler("main", (asked,answer) => {
             answer.write('{hello: "world"}');

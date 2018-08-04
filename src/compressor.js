@@ -22,7 +22,8 @@ const defaultOptions = {
         }else{
             return false;
         }
-    }
+    },
+    keepItOn: true
 };
 
 var desiredOptions;
@@ -33,13 +34,13 @@ const supportedEncodings = {
     //"identity" : function(data){ return data;}
 };
 
-module.exports = (muneem, options, keepItOn) => {
+module.exports = (muneem, options) => {
     desiredOptions = Object.assign( {}, defaultOptions, options);
     if( ! supportedEncodings [desiredOptions.defaultEncoding ] ) {
         throw Error("You must set default encoding to one of the supported encoding");
     }
     muneem.addToAnswer("compress", compress );
-    if(keepItOn !== false){
+    if(desiredOptions.keepItOn){
         muneem.before("answer", compressEvent );
     }
 }

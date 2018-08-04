@@ -35,7 +35,7 @@ describe ('Compressor', () => {
         const muneem = Muneem();
         compressor(muneem, {
             threshold : 10
-        }, true);
+        });
 
         muneem.addHandler("main", (asked,answer) => {
             answer.write('{hello: "world"}', "application/json", 16);
@@ -54,7 +54,7 @@ describe ('Compressor', () => {
         const muneem = Muneem();
         compressor(muneem, {
             threshold : 10
-        }, true);
+        });
 
         muneem.addHandler("main", (asked,answer) => {
             answer.write( Buffer.from('{hello: "world"}'), "application/json", 16);
@@ -70,7 +70,9 @@ describe ('Compressor', () => {
 
     it('should compress when a stream is given', (done) => {
         const muneem = Muneem();
-        compressor(muneem, null, true);
+        compressor(muneem, {
+            keepItOn : true
+        });
 
         muneem.addHandler("main", (asked,answer) => {
             answer.write( intoStream('{hello: "world"}'), "application/json");
@@ -88,7 +90,7 @@ describe ('Compressor', () => {
         const muneem = Muneem();
         compressor(muneem, {
             threshold: 10
-        }, true);
+        });
 
         muneem.addHandler("main", (asked,answer) => {
             answer.write( '{hello: "world"}', "application/json");
@@ -106,7 +108,7 @@ describe ('Compressor', () => {
         const muneem = Muneem();
         compressor(muneem, {
             threshold: 10
-        }, true);
+        });
 
         muneem.addHandler("main", (asked,answer) => {
             answer.write( '{hello: "world"}', "application/json");
@@ -124,7 +126,7 @@ describe ('Compressor', () => {
         const muneem = Muneem();
         compressor(muneem, {
             threshold: 10
-        }, true);
+        });
 
         muneem.addHandler("main", (asked,answer) => {
             answer.write( '{hello: "world"}', "application/json");
@@ -143,7 +145,7 @@ describe ('Compressor', () => {
         const muneem = Muneem();
         compressor(muneem, {
             threshold: 10
-        }, true);
+        });
 
         muneem.addHandler("main", (asked,answer) => {
             answer.write( '{hello: "world"}', "application/json");
