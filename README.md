@@ -1,4 +1,7 @@
 # muneem-compress
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/node-muneem/muneem-compress.svg)](https://greenkeeper.io/)
+
 Compression package for muneem framework
 
 Compression is by default applied to all the routes based on accept encoding header. "gzip" is the default encoding applied when header value is "*". 
