@@ -12,7 +12,7 @@ module.exports = {
     function buildReq(muneem, encoding){
         if(encoding === undefined) encoding = "deflate, gzip";
         muneem.route({
-            uri: "/test",
+            url: "/test",
             to: "main"
         });
 
