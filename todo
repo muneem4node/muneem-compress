@@ -1,0 +1,3 @@
+don't compress the response if the route is not compressable
+- route
+    compressable : false
