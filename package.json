@@ -1,6 +1,6 @@
 {
   "name": "muneem-compress",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Compressor for muneem framework",
   "main": "src/compressor.js",
   "scripts": {
@@ -17,11 +17,12 @@
     "jasmine": "^3.3.1",
     "mock-req": "^0.2.0",
     "mock-res": "^0.5.0",
-    "muneem": "^2.4.4"
+    "muneem": "^2.4.4",
+    "nyc": "^12.0.2"
   },
   "dependencies": {
+    "accept": "^3.1.3",
     "into-stream": "^3.1.0",
-    "nyc": "^12.0.2",
     "pump": "^3.0.0"
   },
   "nyc": {
